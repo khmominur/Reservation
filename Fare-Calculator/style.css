@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #2a5298;
+    --accent: #ff9800;
+    --bg-overlay: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 20px 0 60px;
+}
+
+.card {
+    background: var(--bg-overlay);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px 35px 35px;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease;
+}
+
+/* ===== TABS ===== */
+.tab-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background: rgba(42, 82, 152, 0.08);
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #666;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+}
+
+.tab-btn:not(.active):hover {
+    background: rgba(42, 82, 152, 0.12);
+    color: var(--primary);
+}
+
+/* ===== INPUT GROUP ===== */
+.input-group {
+    margin-bottom: 12px;
+    border: 2px solid #eee;
+    padding: 12px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(42, 82, 152, 0.1);
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+}
+
+.info-btn {
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.info-btn:hover {
+    background: #ff9800;
+    transform: scale(1.1);
+}
+
+/* ===== BUTTONS ===== */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    flex: 2;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2a5298;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover { background: #1e3c72; }
+
+.btn-reset { flex: 1; background: #e74c3c; }
+.btn-reset:hover { background: #c0392b; }
+
+.btn-ticket {
+    width: 100%;
+    background: linear-gradient(135deg, #ff9800, #e65c00);
+}
+.btn-ticket:hover { background: linear-gradient(135deg, #e65c00, #bf4000); }
+
+.btn-copy {
+    background: #27ae60;
+    flex: 1;
+    font-size: 14px;
+    padding: 9px;
+}
+.btn-copy:hover { background: #1e8449; }
+
+/* ===== RESULTS ===== */
+.results {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f4f6f9;
+    border-radius: 10px;
+    border-top: 4px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.results p {
+    margin: 8px 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 13.5px;
+}
+
+.results hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 8px 0;
+}
+
+/* ===== MULTI-PAX ROWS ===== */
+.btn-add-pax {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed rgba(42, 82, 152, 0.4);
+    border-radius: 10px;
+    background: rgba(42, 82, 152, 0.05);
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 4px;
+}
+
+.btn-add-pax:hover {
+    background: rgba(42, 82, 152, 0.12);
+    border-color: var(--primary);
+}
+
+.pax-row {
+    background: rgba(42, 82, 152, 0.04);
+    border: 1.5px solid rgba(42, 82, 152, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.pax-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.pax-type-select {
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: 1.5px solid #ccc;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+}
+
+.btn-remove-pax {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.btn-remove-pax:hover { background: #c0392b; }
+
+.pax-row-labels {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.pax-row-labels span {
+    font-size: 10.5px;
+    color: #999;
+    text-align: center;
+}
+
+.pax-row-fields {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+    gap: 6px;
+}
+
+.pax-field {
+    padding: 8px 6px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    outline: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+.pax-field:focus { border-color: var(--primary); }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box h3 {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+}
+
+/* ===== TICKET OUTPUT ===== */
+.ticket-output {
+    margin-top: 15px;
+    background: #1a1a2e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.ticket-text {
+    color: #e0e0e0;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* ===== GROSS FARE TOGGLE ===== */
+.gross-fare-toggle {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(42, 82, 152, 0.06), rgba(255, 152, 0, 0.06));
+    border: 1.5px dashed rgba(42, 82, 152, 0.3);
+    border-radius: 10px;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-label input[type="checkbox"] { display: none; }
+
+.toggle-custom {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: #ccc;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.toggle-custom::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-custom { background: var(--primary); }
+.toggle-label input[type="checkbox"]:checked + .toggle-custom::after { transform: translateX(18px); }
+
+.toggle-text {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toggle-text i { color: var(--accent); font-size: 13px; }
+
+/* ===== FOOTER ===== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 13px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
